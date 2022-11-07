@@ -1,44 +1,25 @@
 {
-  "name": "sx-lint",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "sxlint-cli",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "nodemon ./index.ts",
-    "serve": "ts-node ./index.ts",
-    "commit": "git add . && git-cz",
-    "tsc": "tsc",
-    "tsc-init": "tsc --init",
-    "prepack": "husky install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "bin": {
-    "sxlint": "./dist/index.js"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-customizable"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YeSuX/sx-lint.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/YeSuX/sx-lint/issues"
-  },
-  "homepage": "https://github.com/YeSuX/sx-lint#readme",
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@types/node": "^18.11.0",
-    "commitizen": "^4.2.5",
-    "cz-customizable": "^7.0.0",
-    "husky": "^8.0.1",
-    "nodemon": "^2.0.20",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
-  }
+    "eslint-config-custom": "workspace:*",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "packageManager": "pnpm@7.14.2"
 }
