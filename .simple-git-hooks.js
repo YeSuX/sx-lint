@@ -1,0 +1,1 @@
+module.exports = require('@sxlint-cli/simple-git-hooks-config')

@@ -7,19 +7,21 @@
     "packages/*"
   ],
   "scripts": {
+    "preinstall": "node ./scripts/preinstall.mjs",
+    "postinstall": "simple-git-hooks",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "commit": "git add . && czg"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
-    "prettier": "latest",
     "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
-  "packageManager": "pnpm@7.14.2"
+  "packageManager": "pnpm@7.14.2",
+  "dependencies": {
+    "@sxlint-cli/commitlint-config": "workspace:^1.0.0",
+    "@sxlint-cli/simple-git-hooks-config": "workspace:^1.0.0"
+  }
 }

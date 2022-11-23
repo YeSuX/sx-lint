@@ -1,0 +1,19 @@
+{
+  "name": "@sxlint-cli/simple-git-hooks-config",
+  "version": "1.0.0",
+  "description": "🚀 The package offer simple-git-hooks for @sxlint-cli!",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "simple-git-hooks": "^2.8.1"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
